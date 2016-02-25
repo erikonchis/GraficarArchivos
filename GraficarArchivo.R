@@ -6,7 +6,7 @@ ui<-fluidPage(
   plotOutput("grafica"),
   tableOutput("resumen")
 )
-
+options(shiny.maxRequestSize=30*1024^2) 
 server<-function(input, output){
   datos<-reactive({
     archivog<-input$archivo
